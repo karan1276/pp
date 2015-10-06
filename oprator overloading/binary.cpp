@@ -13,13 +13,20 @@ class Counter{
 		void operator ++(){
 			count++;
 		}
+		Counter operator +(Counter c){
+			Counter ans;
+			ans.count = count + c.count;
+			return ans;
+		}
 		
 };
 int main(){
-	Counter c;
+	Counter c,c1,c2;
 	
-	c.display();
+	c2.display();
 	++c;
-	c.display();
+	++c1;
+	c2=c1+c;
+	c2.display();
 	return 0;
 }
